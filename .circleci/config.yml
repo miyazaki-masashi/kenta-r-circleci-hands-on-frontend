@@ -1,0 +1,66 @@
+executors:
+  my-executor:
+   working_directory: ~/wd
+   docker:
+     - image: circleci/node
+version: 2.0
+# version: 2.1
+# orbs:
+#   slack: circleci/slack@4.3.0
+jobs:
+  buildApp:
+    working_directory: ~/wd
+    docker:
+      - image : circleci/node
+    steps:
+      - checkout
+      - run:
+          name: npmモジュールのインストール
+          command: npm install
+      - run:
+          name: ビルド
+          command: |
+            yarn build
+      - persist_to_workspace:
+          root: ~/wd
+          paths:
+            - build
+  devDeployApp:
+    working_directory: ~/wd
+    docker:
+      - image : circleci/python:2.7-jessie
+    steps:
+      - run:
+         name: awscli インストール
+         command: sudo pip install awscli
+      - attach_workspace:
+          at: ~/wd
+      - run:
+          name: dist配下をS3にデプロイ
+          command: aws s3 mv --recursive build/ s3://${DEPLOY_S3_BUCKET}/
+workflows:
+  version: 2
+  test-and-deploy:
+    jobs:
+      - buildApp
+      # - buildApp:
+          # post-steps:
+          #   - slack/status:
+          #       fail_only: true
+      - devholdApproval:
+          type: approval
+          requires:
+            - buildApp
+          filters:
+            branches:
+              only:
+                - main
+      - devDeployApp:
+          requires:
+            - devholdApproval
+          filters:
+            branches:
+              only:
+                - main
+          # post-steps:
+          #   - slack/status:

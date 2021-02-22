@@ -25,7 +25,7 @@ git clone git@github.com:kenta-r/kenta-r-circleci-hands-on-frontend.git
 cd kenta-r-circleci-hands-on-frontend
 ls
 npm install
-npm build
+npm start
 ```
 こちらの画面が表示されればOK!
 ![画像](images/001.png)

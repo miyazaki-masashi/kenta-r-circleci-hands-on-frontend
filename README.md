@@ -1,19 +1,20 @@
 
-# 準備
-## GitHubアカウントの準備
+# CircleCIハンズオン初級編
+## 準備
+### GitHubアカウントの準備
 こちらのURLからアカウントを登録ください
 
 https://docs.github.com/ja/github/getting-started-with-github/signing-up-for-a-new-github-account
 
-## Nodejsのインストール
+### Nodejsのインストール
 こちらのサイトからインストールを実施ください
 
 https://nodejs.org/ja/download/
 
-## S３の作成
+### S３の作成
 S３作成は[こちら](準備.md)を実施ください
 
-# ハンズオン①
+## ハンズオン①
 今日のハンズオン手順を自分のリポジトリにコピーする
 
 https://github.com/kenta-r/kenta-r-circleci-hands-on-frontend
@@ -30,9 +31,9 @@ npm start
 ![画像](images/001.png)
 
 
-# ハンズオン②
+## ハンズオン②
 CircleCIの設定
-## GitHubとの連携
+### GitHubとの連携
 CircleCIのアプリ画面に移動し、プロジェクトを連携してください。
 
 https://circleci.com
@@ -43,7 +44,7 @@ https://circleci.com
 今回はそのままビルドを開始してください。
 ![画像](images/004.png)
 
-## 環境変数の設定
+### 環境変数の設定
 ビルドがスタートしますが、設定がまだ終わっていないのでキャンセルし、環境変数の設定に進みます。
 ![画像](images/005.png)
 環境変数を選択したら、AWSへのアクセスキーやデプロイ先のS3名を記載してください。
@@ -58,13 +59,13 @@ https://circleci.com
 下の操作で進めてください。
 ![画像](images/006.png)
 
-# ハンズオン③
-## CircleCIを動かしてS3にアプリケーションをデプロイする
+## ハンズオン③
+### CircleCIを動かしてS3にアプリケーションをデプロイする
 下の画像のように正常に動いていればOKです。
 ![画像](images/007.png)
 
-# ハンズオン④　時間が余ったら
-## 通知機能の実装
+## ハンズオン④　時間が余ったら
+### 通知機能の実装
 
 ### 通知するためのWebhookを作成する
 以下のURLから通知先を選択する

@@ -1,10 +1,13 @@
 
 # 準備
 ## GitHubアカウントの準備
-[こちらのURL](https://docs.github.com/ja/github/getting-started-with-github/signing-up-for-a-new-github-account)からアカウントを登録ください
+こちらのURLからアカウントを登録ください
+
+https://docs.github.com/ja/github/getting-started-with-github/signing-up-for-a-new-github-account
 
 ## Nodejsのインストール
 こちらのサイトからインストールを実施ください
+
 https://nodejs.org/ja/download/
 
 ## S３の作成
@@ -12,6 +15,7 @@ S３作成は[こちら](準備.md)を実施ください
 
 # ハンズオン①
 今日のハンズオン手順を自分のリポジトリにコピーする
+
 https://github.com/kenta-r/kenta-r-circleci-hands-on-frontend
 
 以下のコマンドでフロントエンドアプリを動かす
@@ -27,9 +31,12 @@ npm build
 
 
 # ハンズオン②
-CircleCIを設定する
+CircleCIの設定
 ## GitHubとの連携
-CircleCIの[アプリ画面](https://circleci.com/)に移動し、プロジェクトを連携してください。
+CircleCIのアプリ画面に移動し、プロジェクトを連携してください。
+
+https://circleci.com
+
 ![画像](images/002.png)
 今回はすでにあるCircleCIの設定ファイルを使用します。
 ![画像](images/003.png)
